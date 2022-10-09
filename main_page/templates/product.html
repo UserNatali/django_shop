@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+    <div class="col-lg-2">
+
+                       <!-- <p> <img src="static/media/images/shampoo.png" height="250" ></p>-->
+<!--&lt;!&ndash;                       <dl class="product">&ndash;&gt;-->
+<!--&lt;!&ndash;							  <dt>Описание:</dt>&ndash;&gt;-->
+<!--&lt;!&ndash;							  <dd><p>{{ product.description }}</p></dd>&ndash;&gt;-->
+<!--&lt;!&ndash;							</dl>&ndash;&gt;-->
+<!--                         {% for object in object_list %}-->
+<!--                        <tr>-->
+<!--                                &lt;!&ndash; Display Objects &ndash;&gt;-->
+<!--                            <td>{{ object.name }}</td>-->
+<!--                            {% empty %}-->
+<!--                            <td>No objects yet.</td>-->
+<!--                            {% endfor %}-->
+<!--                        </tr>-->
+        <table style="width:100%">
+        {% for object in object_list %}
+            <tr>
+            <!-- Display Objects -->
+            <td>{{ object.name }}</td>
+            <td>{{ object.price }}</td>
+            <td>{{ object.description }}</td>
+            <td>{{ object.is_active }} </td>
+             <img src="{{object.image}}" height="250" >
+            <td>{{ object.description_all }}</td>
+
+            <!-- If objet_tdst is empty  -->
+        {% empty %}
+            <td>No objects yet.</td>
+        {% endfor %}
+        </tr>
+        </table>
+    </div>
+
+
+</html>
